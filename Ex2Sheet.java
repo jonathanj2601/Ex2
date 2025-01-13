@@ -1,10 +1,8 @@
 import java.io.IOException;
-// Add your documentation below:
 
 public class Ex2Sheet implements Sheet {
     private Cell[][] table;
     // Add your code here
-
     // ///////////////////
     public Ex2Sheet(int x, int y) {
         table = new SCell[x][y];
@@ -22,13 +20,10 @@ public class Ex2Sheet implements Sheet {
     @Override
     public String value(int x, int y) {
         String ans = Ex2Utils.EMPTY_CELL;
-        // Add your code here
-
         Cell c = get(x,y);
         if(c!=null) {ans = c.toString();}
+        return table[x][y].toString();
 
-        /////////////////////
-        return ans;
     }
 
     @Override
@@ -39,9 +34,8 @@ public class Ex2Sheet implements Sheet {
     @Override
     public Cell get(String cords) {
         Cell ans = null;
-        // Add your code here
+        //(0,1)
 
-        /////////////////////
         return ans;
     }
 
@@ -57,9 +51,6 @@ public class Ex2Sheet implements Sheet {
     public void set(int x, int y, String s) {
         Cell c = new SCell(s);
         table[x][y] = c;
-        // Add your code here
-
-        /////////////////////
     }
     @Override
     public void eval() {
@@ -72,16 +63,14 @@ public class Ex2Sheet implements Sheet {
     @Override
     public boolean isIn(int xx, int yy) {
         boolean ans = xx>=0 && yy>=0;
-        // Add your code here
-
-        /////////////////////
-        return ans;
+        return xx >= 0 && yy >= 0 && xx<width() && yy<height();
     }
 
     @Override
     public int[][] depth() {
         int[][] ans = new int[width()][height()];
         // Add your code here
+
 
         // ///////////////////
         return ans;
@@ -91,9 +80,8 @@ public class Ex2Sheet implements Sheet {
     public void load(String fileName) throws IOException {
         // Add your code here
 
-        /////////////////////
+        /////////////////////  file writer file buffer.
     }
-
     @Override
     public void save(String fileName) throws IOException {
         // Add your code here
@@ -105,7 +93,7 @@ public class Ex2Sheet implements Sheet {
     public String eval(int x, int y) {
         String ans = null;
         if(get(x,y)!=null) {ans = get(x,y).toString();}
-        // Add your code here
+        // Add your code here arrylist order eval x,y; (x,y) (13, 0) =a13
 
         /////////////////////
         return ans;
